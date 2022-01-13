@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git文件上传出错</title>
+      <link href="/2022/01/13/git%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%87%BA%E9%94%99/"/>
+      <url>/2022/01/13/git%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%87%BA%E9%94%99/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git上传文件出错"><a href="#git上传文件出错" class="headerlink" title="git上传文件出错"></a>git上传文件出错</h1><p>在将自己的代码上传到github上时，报这样的错误</p><p>![屏幕截图 2022-01-13 193443](../../../../图片/Camera Roll/屏幕截图 2022-01-13 193443.png)</p><p>+++</p><p>查阅他人的资料</p><blockquote><p>[git上传文件出错<a href="https://www.jianshu.com/p/a9242b762373">rejected] master -&gt; master (fetch first) error: failed to push some refs to ‘ - 简书 (jianshu.com)</a></p></blockquote><p>因为github中的README.md文件不在本地代码目录中，可以通过如下命令进行代码合并</p><p>git pull –rebase origin master</p><p>git push origin master</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>深入类和对象</title>
       <link href="/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"/>
       <url>/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</url>
