@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>python中特殊的赋值方法</title>
+      <link href="/2022/01/20/python%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%9A%84%E8%B5%8B%E5%80%BC%E6%96%B9%E6%B3%95/"/>
+      <url>/2022/01/20/python%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%9A%84%E8%B5%8B%E5%80%BC%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="链式赋值"><a href="#链式赋值" class="headerlink" title="链式赋值"></a>链式赋值</h1><p>可以通过这样简洁的方式，减少代码行数</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = b = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(a,b)</span><br></pre></td></tr></table></figure><h1 id="交叉赋值"><a href="#交叉赋值" class="headerlink" title="交叉赋值"></a>交叉赋值</h1><p>一种可以不需要第三个变量，就可以交换两个变量的值的方法，优雅而简洁。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a,b = <span class="number">1</span>,<span class="number">2</span></span><br><span class="line"><span class="comment"># 在赋值的过程中，右侧的变量，不会随着左侧的变量值改变而改变</span></span><br><span class="line">a,b = b,a </span><br><span class="line"><span class="built_in">print</span>(a,b)</span><br></pre></td></tr></table></figure><h1 id="解压赋值"><a href="#解压赋值" class="headerlink" title="解压赋值"></a>解压赋值</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="comment"># a可以为任意序列类型</span></span><br><span class="line">b,*c = a</span><br><span class="line"><span class="built_in">print</span>(b,c) <span class="comment">#注意c可以为空，但只会是列表</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>逻辑运算符的短路运算</title>
+      <link href="/2022/01/20/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E7%9F%AD%E8%B7%AF%E8%BF%90%E7%AE%97/"/>
+      <url>/2022/01/20/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E7%9F%AD%E8%B7%AF%E8%BF%90%E7%AE%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="逻辑运算符的短路运算"><a href="#逻辑运算符的短路运算" class="headerlink" title="逻辑运算符的短路运算"></a>逻辑运算符的短路运算</h1><p>一般逻辑运算符<code>and or not</code>多用于与<code>if</code>等判断语句搭配，这是逻辑判断功能，但它实际还有运算功能。</p><p>+++</p><p>and 若第一个为true，返回第二个的值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">8</span> <span class="keyword">and</span> <span class="number">7</span> <span class="comment"># a = 7</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line">a = <span class="number">0</span> <span class="keyword">and</span> <span class="number">7</span> <span class="comment"># a = 0</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure><p>or若第一个为true，返回第一个的值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">8</span> <span class="keyword">or</span> <span class="number">7</span> <span class="comment"># b = 8</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line">b = <span class="number">0</span> <span class="keyword">and</span> <span class="number">7</span> <span class="comment"># b = 7</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure><p>+++</p><p>根据这样的用法，对于一些特殊场景，便可以加以巧妙利用</p><p><strong>注意</strong></p><blockquote><p>优先级顺序：not &gt; and &gt; or </p><p>not是从右往左，and 和 or 是从左往右</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>__name__ = __main__的理解</title>
       <link href="/2022/01/17/name-main-%E7%9A%84%E7%90%86%E8%A7%A3/"/>
       <url>/2022/01/17/name-main-%E7%9A%84%E7%90%86%E8%A7%A3/</url>
