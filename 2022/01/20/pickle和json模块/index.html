@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://pursur314.github.io/2022/01/13/深入类和对象/"/>
+  <link rel="canonical" href="https://pursur314.github.io/2022/01/20/pickle和json模块/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,23 +20,23 @@
   <meta content="pursur_world" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1642645828395" as="style">
+  <link rel="preload" href="/css/style.css?time=1644667342327" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>深入类和对象 - pursur_world</title>
+  <title>pickle和json模块 - pursur_world</title>
   <meta name="keywords" content="python,null">
-  <meta name="description" content="三. 深入类和对象鸭子类型和多态 什么是鸭子类型？（python的核心）   只要行为，性格像鸭子，就把它看作鸭子。在python中，其实就是只要具有相同的方法，那么就可以把它归为一类对象。   例如list，set，tuple都是可迭代对象，都是一只鸭子（他们都包含一些相同的魔法函数）  多态   同一种事物，但具有不同的形态，人和其他动物都是动物，都可以走，但人和其他动物不一样，由此体现了动物">
+  <meta name="description" content="python的序列化模块​    序列化：把对象或变量从内存中变成可储存或传输的过程称为序列化 pickle 模块​         把对象序列化为python可识别的对象，且不同版本可能不兼容，相对不重要 json 模块​        json表示出来是一个字符串，不同的编程语言都可以读取，所以可以在不同的编程语言中传递对象。​        函数​            序列化：dumps生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入类和对象">
-<meta property="og:url" content="https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:title" content="pickle和json模块">
+<meta property="og:url" content="https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="pursur_world">
-<meta property="og:description" content="三. 深入类和对象鸭子类型和多态 什么是鸭子类型？（python的核心）   只要行为，性格像鸭子，就把它看作鸭子。在python中，其实就是只要具有相同的方法，那么就可以把它归为一类对象。   例如list，set，tuple都是可迭代对象，都是一只鸭子（他们都包含一些相同的魔法函数）  多态   同一种事物，但具有不同的形态，人和其他动物都是动物，都可以走，但人和其他动物不一样，由此体现了动物">
+<meta property="og:description" content="python的序列化模块​    序列化：把对象或变量从内存中变成可储存或传输的过程称为序列化 pickle 模块​         把对象序列化为python可识别的对象，且不同版本可能不兼容，相对不重要 json 模块​        json表示出来是一个字符串，不同的编程语言都可以读取，所以可以在不同的编程语言中传递对象。​        函数​            序列化：dumps生">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-01-13T09:01:44.000Z">
-<meta property="article:modified_time" content="2022-01-18T02:38:41.965Z">
+<meta property="article:published_time" content="2022-01-20T02:36:03.000Z">
+<meta property="article:modified_time" content="2022-02-11T03:05:47.415Z">
 <meta property="article:author" content="Cain_pursuer">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -1628,8 +1628,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1642645828395" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1642645828395"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1644667342327" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1644667342327"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2395,7 +2395,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">
+  <link itemprop="mainEntityOfPage" href="https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="pursur_world">
   </span>
@@ -2412,7 +2412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        深入类和对象
+        pickle和json模块
       </h1>
       <div class='new-meta-box'>
         
@@ -2431,10 +2431,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/python%E7%9A%84%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/">python的高级编程</a>
+    <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/python%E7%9A%84%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">python的高级编程</span></a>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="url"><span itemprop="name">学习记录</span></a>
       </span>
     
   </div>
@@ -2443,10 +2443,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-01-13T17:01:44+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-01-20T10:36:03+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年1月13日</p>
+    <p>发布于：2022年1月20日</p>
   </a>
 </div>
 
@@ -2467,75 +2467,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="三-深入类和对象"><a href="#三-深入类和对象" class="headerlink" title="三. 深入类和对象"></a>三. 深入类和对象</h2><div class="story post-story"><h3 id="鸭子类型和多态"><a href="#鸭子类型和多态" class="headerlink" title="鸭子类型和多态"></a>鸭子类型和多态</h3><ul>
-<li><p><strong>什么是鸭子类型</strong>？（python的核心）</p>
-<p>  只要行为，性格像鸭子，就把它看作鸭子。在python中，其实就是只要具有相同的方法，那么就可以把它归为一类对象。</p>
-<p>  例如list，set，tuple都是可迭代对象，都是一只鸭子（他们都包含一些相同的魔法函数）</p>
-</li>
-<li><p>多态</p>
-<p>  同一种事物，但具有不同的形态，人和其他动物都是动物，都可以走，但人和其他动物不一样，由此体现了动物的多态。</p>
-<p>  在python中，多态可以通过继承的方式体现，子类可以调用父类的方法函数</p>
-</li>
-<li><p>多态性（<strong>注意和多态的区分</strong>）</p>
-<p>  多个不同功能的函数，具有相同的函数名，在python中，python本身就具有多态性，对于不同的类对象，可以有相同的函数名，但实现的功能不一样，我们都可以用相同的方法进行调用</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># d</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">raise</span> AttributeError(<span class="string">&#x27;子类必须实现这个方法&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"> <span class="comment"># 体现多态</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span>(<span class="params">Animal</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;人正在走&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pig</span>(<span class="params">Animal</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;pig is walking&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>(<span class="params">Animal</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;dog is running&#x27;</span>)</span><br><span class="line"> </span><br><span class="line">peo=People()</span><br><span class="line">pig=Pig()</span><br><span class="line">dog=Dog()</span><br><span class="line"> <span class="comment"># 体现多态</span></span><br><span class="line">peo.run()</span><br><span class="line">pig.run()</span><br><span class="line">dog.run()</span><br><span class="line"></span><br><span class="line">animal = [peo,pig,dog]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> animal:</span><br><span class="line">	i.run() <span class="comment"># 体现多态性</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>+++</p>
-<h3 id="抽象基类"><a href="#抽象基类" class="headerlink" title="抽象基类"></a>抽象基类</h3><ul>
-<li>目的<ul>
-<li>为了判断某个对象的类型</li>
-<li>为了使某个对象的子类必须实现父类的某些方法</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使子类在实例化时就抛出异常</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>(<span class="params">metaclass= abc.ABCMeta</span>):</span></span><br><span class="line"><span class="meta">    @abc.abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self,key</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @abc.abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getvalue</span>(<span class="params">self,key,value</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">B() <span class="comment"># 抛出异常</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#使子类在调用父类方法时抛出异常</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self,key</span>):</span></span><br><span class="line">        <span class="keyword">raise</span> NotImplementedError</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getvalue</span>(<span class="params">self,key,value</span>):</span></span><br><span class="line">        <span class="keyword">raise</span> NotImplementedError</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>(<span class="params">C</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">testD = D()</span><br><span class="line">testD.get(<span class="string">&quot;dk&quot;</span>) <span class="comment"># 抛出异常</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>+++</p>
-<h3 id="type和isinstance的区别"><a href="#type和isinstance的区别" class="headerlink" title="type和isinstance的区别"></a>type和isinstance的区别</h3><ul>
-<li><p>type实质返回的是将该对象实例化的类，不能判断是否是该类的父类将其实例化</p>
-</li>
-<li><p>isinstance（）实质判断的是是否属于该类型，也就可以判断与父类的关系</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__base__ # 可以查看所有的基类</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>+++</p>
-<h3 id="类的深入"><a href="#类的深入" class="headerlink" title="类的深入"></a>类的深入</h3><ul>
-<li><p>类的属性和实例属性及其查找顺序</p>
-<pre><code>      类和他的实例是两个不同的对象，在查找其属性时自下而上查找
-</code></pre>
-</li>
-<li><p>多继承的查找方法</p>
-<ul>
-<li>c3算法：python 独有的mro算法，解决钻石（菱形）的继承问题，以及Y型问题</li>
-</ul>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 菱形继承</span></span><br><span class="line"><span class="comment"># 当一个类d继承的两个类b，c中继承了相同的一个类a，而继承的b，c类中均对a中的同一个方法进行了改写，具有不同的功能，由此产生问题</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">a1</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">b1</span>(<span class="params">a1</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c1</span>(<span class="params">a1</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">d1</span>(<span class="params">b1,c1</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(d1.__mro__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># y型继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">a2</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">b2</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c2</span>(<span class="params">a2</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">d2</span>(<span class="params">b2</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">e2</span>(<span class="params">c2,d2</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(e2.__mro__)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>总结：本地优先，先在本地查找，然后按继承的列表顺序查找，如果在查找的父类中继承了其他类，那么继续向上查找，没有的话才会查找相同级别的下一个父类</li>
-</ul>
-</li>
-<li><p>静态方法和类方法以及实例方法的区别   </p>
-<ol>
-<li><p>静态方法和类方法不需要实例化就可以实现，而实例方法需要实例化后才可以实现</p>
-</li>
-<li><p>静态方法没有传入该类，需要用@staticmethod 装饰器</p>
-</li>
-<li><p>类方法传入了所在类，cls（类似于self），需要用@classmethod 装饰</p>
-</li>
-</ol>
-</li>
-<li><p>类的私有变量和私有方法 <strong>（变量和方法都是该类的属性）</strong></p>
-<ul>
-<li>在属性或方法前加双下划线，但不是绝对私有化，可以通过_class__attr得到，</li>
-<li>只能在该对象的内部使用，其子类或实例都不能调用</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    __initiu_date = <span class="string">&quot;0000_00_00&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,year,month,day</span>):</span></span><br><span class="line">        self.year = year</span><br><span class="line">        self.month = month</span><br><span class="line">        self.day = day</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__parse_date</span>(<span class="params">string</span>):</span></span><br><span class="line">        year,month,day = <span class="built_in">tuple</span>(string.split(<span class="string">&quot;-&quot;</span>))</span><br><span class="line">        <span class="keyword">return</span> Date(year,month,day)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parsing_date</span>(<span class="params">cls,string</span>):</span></span><br><span class="line">        year, month, day = <span class="built_in">tuple</span>(string.split(<span class="string">&quot;-&quot;</span>))</span><br><span class="line">        <span class="keyword">return</span> cls(year, month, day)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;<span class="subst">&#123;self.month&#125;</span> <span class="subst">&#123;self.day&#125;</span> <span class="subst">&#123;self.year&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">date = <span class="string">&quot;2021-11-8&quot;</span></span><br><span class="line">today = Date.parsing_date(date)</span><br><span class="line">toda = Date._Date__parse_date(date) <span class="comment">#得到私有方法</span></span><br><span class="line"><span class="built_in">print</span>(today,toda)</span><br><span class="line"><span class="built_in">print</span>(today._Date__initiu_date) <span class="comment">#得到私有变量</span></span><br></pre></td></tr></table></figure>
-
-
-
+    <h1 id="python的序列化模块"><a href="#python的序列化模块" class="headerlink" title="python的序列化模块"></a>python的序列化模块</h1><p>​    序列化：把对象或变量从内存中变成可储存或传输的过程称为序列化</p>
+<h2 id="pickle-模块"><a href="#pickle-模块" class="headerlink" title="pickle 模块"></a>pickle 模块</h2><div class="story post-story"><p>​         把对象序列化为python可识别的对象，且不同版本可能不兼容，相对不重要</p>
+</div><h2 id="json-模块"><a href="#json-模块" class="headerlink" title="json 模块"></a>json 模块</h2><div class="story post-story"><p>​        json表示出来是一个字符串，不同的编程语言都可以读取，所以可以在不同的编程语言中传递对象。<br>​        函数<br>​            序列化：dumps生成一个字符串，dump生成一个字符串并保存到文件里，有两个参数<br>​            反序列化：loads和load（相当于eval（）），区别和dump一样，但读取文件，且都只有一个参数<br>​        注意：在储存文件时不能有空行，且字典类型全部都要用双引号，不然json识别不了</p>
 
 </div>
   </div>
@@ -2555,7 +2489,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/>https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</a></p>
+                <p>本文永久链接是：<a href=https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/>https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/</a></p>
               
             
           </blockquote>
@@ -2572,10 +2506,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-18T10:38:41+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-02-11T11:05:47+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年1月18日</p>
+    <p>更新于：2022年2月11日</p>
   </a>
 </div>
 
@@ -2598,7 +2532,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/&title=深入类和对象 - pursur_world&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/&title=pickle和json模块 - pursur_world&summary="
           
           >
           
@@ -2610,7 +2544,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/&title=深入类和对象 - pursur_world&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/&title=pickle和json模块 - pursur_world&summary="
           
           >
           
@@ -2622,7 +2556,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/&title=深入类和对象 - pursur_world&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/&title=pickle和json模块 - pursur_world&summary="
           
           >
           
@@ -2655,19 +2589,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/01/13/git%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%87%BA%E9%94%99/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>git文件上传出错</p>
-          <p class='content'>git上传文件出错在将自己的代码上传到github上时，报这样的错误
-![屏幕截图 2022-01-13 193443](../../../../图片/Camera Roll/屏幕截图 2022...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/01/13/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/'>
-          <p class='title'>魔法函数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>二.魔法函数什么是魔法函数？以双下划线（__)开头和结尾的，python内置，解释器自动调用，用户无法定义其名称的函数
-魔法函数的影响
-改变或增加对象的类型
-魔法函数实际是python的一种数据...</p>
+        <a class='next' href='/2022/01/20/python%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%9A%84%E8%B5%8B%E5%80%BC%E6%96%B9%E6%B3%95/'>
+          <p class='title'>python中特殊的赋值方法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>链式赋值可以通过这样简洁的方式，减少代码行数
+12a = b = 1print(a,b)
+
+
+
+交叉赋值一种可以不需要第三个变量，就可以交换两个变量的值的方法，优雅而简洁。
+1234a,b = ...</p>
         </a>
       
     </div>
@@ -2683,7 +2614,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论</p>
     
@@ -2716,7 +2647,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-text">三. 深入类和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%A4%9A%E6%80%81"><span class="toc-text">鸭子类型和多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E5%9F%BA%E7%B1%BB"><span class="toc-text">抽象基类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#type%E5%92%8Cisinstance%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">type和isinstance的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E6%B7%B1%E5%85%A5"><span class="toc-text">类的深入</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pickle-%E6%A8%A1%E5%9D%97"><span class="toc-text">pickle 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json-%E6%A8%A1%E5%9D%97"><span class="toc-text">json 模块</span></a></li></ol>
     </div>
   </section>
 
@@ -2768,7 +2699,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="深入类和对象";
+  pdata.postTitle="pickle和json模块";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2898,8 +2829,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642645828394')
-      volantis.js('/js/thirdparty/message.js?time=1642645828394', () => {
+      volantis.css('/css/message.css?time=1644667342327')
+      volantis.js('/js/thirdparty/message.js?time=1644667342327', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2944,8 +2875,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642645828394')
-      volantis.js('/js/thirdparty/message.js?time=1642645828394', () => {
+      volantis.css('/css/message.css?time=1644667342327')
+      volantis.js('/js/thirdparty/message.js?time=1644667342327', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3004,8 +2935,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642645828394')
-      volantis.js('/js/thirdparty/message.js?time=1642645828394', () => {
+      volantis.css('/css/message.css?time=1644667342327')
+      volantis.js('/js/thirdparty/message.js?time=1644667342327', () => {
         hideMessage(done);
       });
     } else {
@@ -3270,7 +3201,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-    volantis.js('/js/plugins/rightMenu.js?time=1642645828394')
+    volantis.js('/js/plugins/rightMenu.js?time=1644667342327')
   </script>
 
 
@@ -3284,19 +3215,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1642645828394")
+        volantis.js("/js/plugins/sites.js?time=1644667342327")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1642645828394")
+        volantis.js("/js/plugins/friends.js?time=1644667342327")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1642645828394")
+        volantis.js("/js/plugins/contributors.js?time=1644667342327")
       }
     
   };
@@ -3368,7 +3299,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1642645828396')
+    await volantis.js('/js/plugins/aplayer.js?time=1644667342329')
     volantis.APlayerController.music = true;
   
   })();
@@ -3508,7 +3439,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1642645828395.js"></script>
+<script src="/js/app.js?time=1644667342327.js"></script>
 
 
 <!-- optional -->
@@ -3521,7 +3452,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1642645828394");
+    return volantis.js("/js/search/hexo.js?time=1644667342327");
   }
 
   function loadSearchService() {
@@ -3586,7 +3517,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3629,7 +3560,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1642645828394').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1644667342327').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3863,7 +3794,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/python的高级编程/","name":"python的高级编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/01/13/深入类和对象/","name":"深入类和对象"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"深入类和对象","description":"","datePublished":"2022-01-13T09:01:44.000Z","dateModified":"2022-01-18T02:38:41.965Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/","wordCount":0,"articleSection":"python的高级编程","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/学习记录/","name":"学习记录"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/01/20/pickle和json模块/","name":"pickle和json模块"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"pickle和json模块","description":"","datePublished":"2022-01-20T02:36:03.000Z","dateModified":"2022-02-11T03:05:47.415Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/","wordCount":0,"articleSection":"学习记录","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

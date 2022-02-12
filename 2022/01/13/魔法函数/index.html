@@ -20,7 +20,7 @@
   <meta content="pursur_world" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1642645828400" as="style">
+  <link rel="preload" href="/css/style.css?time=1644667342336" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-01-13T08:59:46.000Z">
-<meta property="article:modified_time" content="2022-01-13T09:03:47.405Z">
+<meta property="article:modified_time" content="2022-01-22T03:15:25.491Z">
 <meta property="article:author" content="Cain_pursuer">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -1628,8 +1628,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1642645828400" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1642645828400"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1644667342336" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1644667342336"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2475,8 +2475,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>+++</p>
 <p>由于魔法函数过多，其后会慢慢学习，只选用几个例子</p>
 <p>+++</p>
-<h3 id="魔法函数的例子"><a href="#魔法函数的例子" class="headerlink" title="魔法函数的例子"></a>魔法函数的例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">company</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; 通过__doc__查看 &quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,employee</span>):</span></span><br><span class="line">        self.employee = employee</span><br><span class="line"></span><br><span class="line">    <span class="comment">#变成一个可迭代类型的对象（与iter类似）</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self,item</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.employee[item]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#变成一个list类型的对象</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.employee)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;变成一个str类型的对象&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;.&quot;</span>.join(self.employee)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">com = company([<span class="string">&quot;petter&quot;</span>,<span class="string">&quot;Tom&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> com:</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="魔法函数的例子"><a href="#魔法函数的例子" class="headerlink" title="魔法函数的例子"></a>魔法函数的例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">company</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; 通过__doc__查看 &quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,employee</span>):</span></span><br><span class="line">        self.employee = employee</span><br><span class="line"></span><br><span class="line">    <span class="comment">#变成一个可迭代类型的对象（与iter类似）</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self,item</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.employee[item]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#变成一个y类型的鸭子对象</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.employee)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;变成一个str类型的对象&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;.&quot;</span>.join(self.employee)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">com = company([<span class="string">&quot;petter&quot;</span>,<span class="string">&quot;Tom&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> com:</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+
+
+<h3 id="python的with语句"><a href="#python的with语句" class="headerlink" title="python的with语句"></a>python的with语句</h3><p>满足python自带的上下文管理器协议<br>协议内容：<br>     在用with语句时，获取资源时自动调用 <strong>enter</strong> 魔法函数，释放资源时自动调用 <strong>exit</strong> 魔法函数<br>     定义其上两个魔法函数后便可以使用with 语句打开</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实质上跟函数的装饰器差不多，可以让类添加额外的方法</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">with_method</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;进入时自动调用的方法&quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enter__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;enter&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">use_method</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;using!!!&quot;</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;退出时自动调用的方法&quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__exit__</span>(<span class="params">self, exc_type, exc_val, exc_tb</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;exit&quot;</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> with_method() <span class="keyword">as</span> fp:</span><br><span class="line">    fp.use_method()        </span><br></pre></td></tr></table></figure>
 
 </div>
   </div>
@@ -2513,10 +2517,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-13T17:03:47+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-22T11:15:25+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年1月13日</p>
+    <p>更新于：2022年1月22日</p>
   </a>
 </div>
 
@@ -2596,12 +2600,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/01/13/%E6%B7%B1%E5%85%A5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>深入类和对象</p>
-          <p class='content'>三. 深入类和对象鸭子类型和多态
-什么是鸭子类型？（python的核心）
-  只要行为，性格像鸭子，就把它看作鸭子。在python中，其实就是只要具有相同的方法，那么就可以把它归为一类对象。
- ...</p>
+        <a class='prev' href='/2022/01/13/git%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%87%BA%E9%94%99/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>git文件上传出错</p>
+          <p class='content'>git上传文件出错在将自己的代码上传到github上时，报这样的错误
+![屏幕截图 2022-01-13 193443](../../../../图片/Camera Roll/屏幕截图 2022...</p>
         </a>
       
       
@@ -2665,7 +2667,7 @@ pyth...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-text">二.魔法函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0%EF%BC%9F"><span class="toc-text">什么是魔法函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-text">魔法函数的影响</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">魔法函数的例子</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-text">二.魔法函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0%EF%BC%9F"><span class="toc-text">什么是魔法函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-text">魔法函数的影响</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">魔法函数的例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E7%9A%84with%E8%AF%AD%E5%8F%A5"><span class="toc-text">python的with语句</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -2847,8 +2849,8 @@ pyth...</p>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642645828400')
-      volantis.js('/js/thirdparty/message.js?time=1642645828400', () => {
+      volantis.css('/css/message.css?time=1644667342336')
+      volantis.js('/js/thirdparty/message.js?time=1644667342336', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2893,8 +2895,8 @@ pyth...</p>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642645828400')
-      volantis.js('/js/thirdparty/message.js?time=1642645828400', () => {
+      volantis.css('/css/message.css?time=1644667342336')
+      volantis.js('/js/thirdparty/message.js?time=1644667342336', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2953,8 +2955,8 @@ pyth...</p>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642645828400')
-      volantis.js('/js/thirdparty/message.js?time=1642645828400', () => {
+      volantis.css('/css/message.css?time=1644667342336')
+      volantis.js('/js/thirdparty/message.js?time=1644667342336', () => {
         hideMessage(done);
       });
     } else {
@@ -3219,7 +3221,7 @@ pyth...</p>
     
     
     
-    volantis.js('/js/plugins/rightMenu.js?time=1642645828400')
+    volantis.js('/js/plugins/rightMenu.js?time=1644667342336')
   </script>
 
 
@@ -3233,19 +3235,19 @@ pyth...</p>
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1642645828400")
+        volantis.js("/js/plugins/sites.js?time=1644667342336")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1642645828400")
+        volantis.js("/js/plugins/friends.js?time=1644667342336")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1642645828400")
+        volantis.js("/js/plugins/contributors.js?time=1644667342336")
       }
     
   };
@@ -3317,7 +3319,7 @@ pyth...</p>
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1642645828401')
+    await volantis.js('/js/plugins/aplayer.js?time=1644667342337')
     volantis.APlayerController.music = true;
   
   })();
@@ -3457,7 +3459,7 @@ pyth...</p>
 
 
 
-<script src="/js/app.js?time=1642645828400.js"></script>
+<script src="/js/app.js?time=1644667342336.js"></script>
 
 
 <!-- optional -->
@@ -3470,7 +3472,7 @@ pyth...</p>
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1642645828400");
+    return volantis.js("/js/search/hexo.js?time=1644667342336");
   }
 
   function loadSearchService() {
@@ -3535,7 +3537,7 @@ pyth...</p>
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3578,7 +3580,7 @@ pyth...</p>
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1642645828400').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1644667342336').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3812,7 +3814,7 @@ pyth...</p>
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/python的高级编程/","name":"python的高级编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/01/13/魔法函数/","name":"魔法函数"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"魔法函数","description":"","datePublished":"2022-01-13T08:59:46.000Z","dateModified":"2022-01-13T09:03:47.405Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/01/13/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/01/13/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/","wordCount":0,"articleSection":"python的高级编程","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/python的高级编程/","name":"python的高级编程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/01/13/魔法函数/","name":"魔法函数"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"魔法函数","description":"","datePublished":"2022-01-13T08:59:46.000Z","dateModified":"2022-01-22T03:15:25.491Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/01/13/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/01/13/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/","wordCount":0,"articleSection":"python的高级编程","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
