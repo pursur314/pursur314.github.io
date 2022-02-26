@@ -20,7 +20,7 @@
   <meta content="pursur_world" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1644667342329" as="style">
+  <link rel="preload" href="/css/style.css?time=1645878805673" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-01-17T08:42:06.000Z">
-<meta property="article:modified_time" content="2022-01-17T12:01:23.936Z">
+<meta property="article:modified_time" content="2022-02-26T12:32:52.083Z">
 <meta property="article:author" content="Cain_pursuer">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -1628,8 +1628,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1644667342329" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1644667342329"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1645878805673" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1645878805673"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2471,6 +2471,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><code>__name__</code>和<code>__main__</code>都是python的内置的属性之一，在python的模块中，表示该模块名称，在python文件中也就是该文件名</p>
 <p>在a.py文件中运行时，<code>(a.py)__name__ == (a.py)&quot;__main__&quot;</code>，但是是运行的在<code>import</code>的过程中，导入a 文件，导入的是a，没有后缀也就不会执行main下的语句。</p>
 <p>假设是运行的文件是b.py，导入了a（不是a.py) <code>__name__</code>也就不等于<code>__main__</code>而是<code>a</code></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ul>
+<li><code>import</code>多次导入同一个模块时会以第一个模块的内容为标准</li>
+<li><code>import</code>如果在其他模块导入中重复导入会导致导入不完全</li>
+</ul>
 
 
   </div>
@@ -2507,10 +2511,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-17T20:01:23+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-02-26T20:32:52+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年1月17日</p>
+    <p>更新于：2022年2月26日</p>
   </a>
 </div>
 
@@ -2837,8 +2841,8 @@ git的安装步骤
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644667342329')
-      volantis.js('/js/thirdparty/message.js?time=1644667342329', () => {
+      volantis.css('/css/message.css?time=1645878805673')
+      volantis.js('/js/thirdparty/message.js?time=1645878805673', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2883,8 +2887,8 @@ git的安装步骤
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644667342329')
-      volantis.js('/js/thirdparty/message.js?time=1644667342329', () => {
+      volantis.css('/css/message.css?time=1645878805673')
+      volantis.js('/js/thirdparty/message.js?time=1645878805673', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2943,8 +2947,8 @@ git的安装步骤
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644667342329')
-      volantis.js('/js/thirdparty/message.js?time=1644667342329', () => {
+      volantis.css('/css/message.css?time=1645878805673')
+      volantis.js('/js/thirdparty/message.js?time=1645878805673', () => {
         hideMessage(done);
       });
     } else {
@@ -3209,7 +3213,7 @@ git的安装步骤
     
     
     
-    volantis.js('/js/plugins/rightMenu.js?time=1644667342329')
+    volantis.js('/js/plugins/rightMenu.js?time=1645878805673')
   </script>
 
 
@@ -3223,19 +3227,19 @@ git的安装步骤
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1644667342329")
+        volantis.js("/js/plugins/sites.js?time=1645878805673")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1644667342329")
+        volantis.js("/js/plugins/friends.js?time=1645878805673")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1644667342329")
+        volantis.js("/js/plugins/contributors.js?time=1645878805673")
       }
     
   };
@@ -3307,7 +3311,7 @@ git的安装步骤
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1644667342330')
+    await volantis.js('/js/plugins/aplayer.js?time=1645878805674')
     volantis.APlayerController.music = true;
   
   })();
@@ -3447,7 +3451,7 @@ git的安装步骤
 
 
 
-<script src="/js/app.js?time=1644667342329.js"></script>
+<script src="/js/app.js?time=1645878805673.js"></script>
 
 
 <!-- optional -->
@@ -3460,7 +3464,7 @@ git的安装步骤
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1644667342329");
+    return volantis.js("/js/search/hexo.js?time=1645878805673");
   }
 
   function loadSearchService() {
@@ -3525,7 +3529,7 @@ git的安装步骤
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3568,7 +3572,7 @@ git的安装步骤
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1644667342329').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1645878805673').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3802,7 +3806,7 @@ git的安装步骤
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/问题记录/","name":"问题记录"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/01/17/name-main-的理解/","name":"__name__ = __main__的理解"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"__name__ = __main__的理解","description":"","datePublished":"2022-01-17T08:42:06.000Z","dateModified":"2022-01-17T12:01:23.936Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/01/17/name-main-%E7%9A%84%E7%90%86%E8%A7%A3/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/01/17/name-main-%E7%9A%84%E7%90%86%E8%A7%A3/","wordCount":0,"articleSection":"问题记录","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/问题记录/","name":"问题记录"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/01/17/name-main-的理解/","name":"__name__ = __main__的理解"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"__name__ = __main__的理解","description":"","datePublished":"2022-01-17T08:42:06.000Z","dateModified":"2022-02-26T12:32:52.083Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/01/17/name-main-%E7%9A%84%E7%90%86%E8%A7%A3/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/01/17/name-main-%E7%9A%84%E7%90%86%E8%A7%A3/","wordCount":0,"articleSection":"问题记录","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
