@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python在import时的问题</title>
+      <link href="/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/"/>
+      <url>/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="同目录下导入模块会报错"><a href="#同目录下导入模块会报错" class="headerlink" title="同目录下导入模块会报错"></a><strong>同目录下导入模块会报错</strong></h1><p>  在一个学习案例中，同一个目录下无法导入模块，报如下的错误</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named <span class="string">&#x27;s_handler&#x27;</span></span><br></pre></td></tr></table></figure><p>这是因为PyCharm不会将当前文件目录自动加入source_path。</p><p>将该目录设置为Source root</p><p><img src="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/20190414123556491.png" class="lazyload" data-srcset="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/20190414123556491.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p><blockquote><p><a href="https://blog.csdn.net/qq_39362996/article/details/89295030?ops_request_misc=%7B%22request_id%22:%22164631112016780271590741%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=164631112016780271590741&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~baidu_landing_v2~default-1-89295030.nonecase&utm_term=PyCharm%E5%90%8C%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E4%BC%9A%E6%8A%A5%E9%94%99&spm=1018.2226.3001.4450">(11条消息) PyCharm同目录下导入模块会报错的问题_一颗小甜心的博客-CSDN博客</a></p></blockquote><p>+++</p><h1 id="python包相对导入时出现的错误"><a href="#python包相对导入时出现的错误" class="headerlink" title="python包相对导入时出现的错误"></a>python包相对导入时出现的错误</h1><p>在<code>from . import XXX </code>或<code>from .。 import XXX </code>时报错</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ValueError: attempted relative <span class="keyword">import</span> beyond top-level package</span><br><span class="line">SystemError: Parent module <span class="string">&#x27;&#x27;</span> <span class="keyword">not</span> loaded, cannot perform relative <span class="keyword">import</span></span><br></pre></td></tr></table></figure><p>要被python解释器视作一个包需要满足以下条件：</p><ol><li>文件夹中必须含有<code>__init__.py</code>文件</li><li>不能作为调用包的顶层来作为程序执行入口</li></ol><p>注意：<strong>在”from YY import XX”这样的代码中，无论是XX还是YY，只要被python解释器视作package，就会首先调用该package的__init__.py文件。如果都是package，则调用顺序是YY，XX。</strong></p><p>解决办法：</p><ol><li>将相对路径变为绝对路径</li><li>把执行文件放在调用的包目录外，顶层脚本的名称为<code>__main__</code>,该目录即使有<code>__init__.py</code>文件，也不会被视作一个包，由于没有<code>..</code>自然无法使用，自然无法使用<code>from .. import </code>。</li></ol><blockquote><p><a href="https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html">Python包的相对导入时出现错误的解决方法 - 青山牧云人 - 博客园 (cnblogs.com)</a></p><p><a href="https://blog.csdn.net/suiyueruge1314/article/details/102683546">(10条消息) python包导入细节（attempted relative import beyond top-level package的原因解读）_岁月如歌-CSDN博客</a></p></blockquote><p>+++</p><h1 id="相对引用和绝对引用的优缺点分析"><a href="#相对引用和绝对引用的优缺点分析" class="headerlink" title="相对引用和绝对引用的优缺点分析"></a>相对引用和绝对引用的优缺点分析</h1><h3 id="绝对引用"><a href="#绝对引用" class="headerlink" title="绝对引用"></a>绝对引用</h3><p>优点是清晰且直接，可以很容易就确定引用文件位置；且即使当前文件的位置发生变化，导入语句仍然有效。<br>缺点是当引用路径较为复杂时，导入语句很长，如：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> package1.subpackage2.subpackage3.subpackage4.module5 <span class="keyword">import</span> function6</span><br></pre></td></tr></table></figure><h3 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h3><p>最直观的优点就是简洁，在包层次结构较为复杂时，相对引用能够借助于以较短的代码实现快速的引用。<br>缺点是较为凌乱，在项目文件位置发生变更时，不易维护；此外，相对引用可读性较差。较难根据引用代码确定引用文件路径。</p><blockquote><p>版权声明：本文为CSDN博主「勤奋的清风」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br><a href="https://blog.csdn.net/qq_23926575/article/details/107510234">https://blog.csdn.net/qq_23926575/article/details/107510234</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pickle和json模块</title>
       <link href="/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/"/>
       <url>/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/</url>
