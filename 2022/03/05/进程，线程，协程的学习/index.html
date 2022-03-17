@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://pursur314.github.io/2022/01/09/typora的使用/"/>
+  <link rel="canonical" href="https://pursur314.github.io/2022/03/05/进程，线程，协程的学习/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,25 +20,25 @@
   <meta content="pursur_world" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1647515590536" as="style">
+  <link rel="preload" href="/css/style.css?time=1647515590479" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>typora的使用 - pursur_world</title>
-  <meta name="keywords" content="软件,null">
-  <meta name="description" content="markdown 语法 完整更详细的操作参考 (6条消息) 最齐的Typora使用教程_水木子的博客-CSDN博客_typora使用教程  只罗列了一些平常写博客用的多的操作 标题 ctrl + 数字键（数字对应几级标题，一共六级），注意ctrl +0 是普通段落 #加上一个空格，然后才是标题内容  字体 斜体 用一对 * 或 _ 括住的字体表示斜体 斜体 ctrl + I   粗体 用一对 **">
+  <title>进程，线程，协程的学习 - pursur_world</title>
+  <meta name="keywords" content="python,null">
+  <meta name="description" content="模型（初步感性认识）工厂模型设想有一个老板  他想要赚钱致富，于是想到办工厂（进程）  为了生产产品，他花钱办了许多个工厂同时生产（多进程），由于每个工厂办在不同的地方，所以工厂之间没有联系（进程之间无法相互通信）  在每个工厂里，有许多不同的流水线，每个流水线有一名或多个工人（线程），一个工厂里可以自由交流（线程之间可以相互通信）  为了提高效率，一条流水线，老板要招收多个工人一起工作（多线程）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typora的使用">
-<meta property="og:url" content="https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="进程，线程，协程的学习">
+<meta property="og:url" content="https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="pursur_world">
-<meta property="og:description" content="markdown 语法 完整更详细的操作参考 (6条消息) 最齐的Typora使用教程_水木子的博客-CSDN博客_typora使用教程  只罗列了一些平常写博客用的多的操作 标题 ctrl + 数字键（数字对应几级标题，一共六级），注意ctrl +0 是普通段落 #加上一个空格，然后才是标题内容  字体 斜体 用一对 * 或 _ 括住的字体表示斜体 斜体 ctrl + I   粗体 用一对 **">
+<meta property="og:description" content="模型（初步感性认识）工厂模型设想有一个老板  他想要赚钱致富，于是想到办工厂（进程）  为了生产产品，他花钱办了许多个工厂同时生产（多进程），由于每个工厂办在不同的地方，所以工厂之间没有联系（进程之间无法相互通信）  在每个工厂里，有许多不同的流水线，每个流水线有一名或多个工人（线程），一个工厂里可以自由交流（线程之间可以相互通信）  为了提高效率，一条流水线，老板要招收多个工人一起工作（多线程）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-01-09T08:30:33.000Z">
-<meta property="article:modified_time" content="2022-01-16T09:11:24.644Z">
+<meta property="article:published_time" content="2022-03-05T11:58:36.000Z">
+<meta property="article:modified_time" content="2022-03-17T11:10:45.509Z">
 <meta property="article:author" content="Cain_pursuer">
-<meta property="article:tag" content="软件">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1628,8 +1628,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1647515590536" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1647515590536"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1647515590479" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1647515590479"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2395,7 +2395,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/">
+  <link itemprop="mainEntityOfPage" href="https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="pursur_world">
   </span>
@@ -2412,7 +2412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        typora的使用
+        进程，线程，协程的学习
       </h1>
       <div class='new-meta-box'>
         
@@ -2431,10 +2431,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+    <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url"><span itemprop="name">教程</span></a>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="url"><span itemprop="name">学习记录</span></a>
       </span>
     
   </div>
@@ -2443,10 +2443,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-01-09T16:30:33+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-03-05T19:58:36+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年1月9日</p>
+    <p>发布于：2022年3月5日</p>
   </a>
 </div>
 
@@ -2467,161 +2467,83 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="markdown-语法"><a href="#markdown-语法" class="headerlink" title="markdown 语法"></a>markdown 语法</h1><blockquote>
-<p>完整更详细的操作参考</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41261251/article/details/102817673?ops_request_misc=%7B%22request_id%22:%22164171928916781683926813%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=164171928916781683926813&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-102817673.pc_search_result_control_group&utm_term=typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B&spm=1018.2226.3001.4187">(6条消息) 最齐的Typora使用教程_水木子的博客-CSDN博客_typora使用教程</a></p>
-</blockquote>
-<p>只罗列了一些平常写博客用的多的操作</p>
-<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><ul>
-<li>ctrl + 数字键（数字对应几级标题，一共六级），注意ctrl +0 是普通段落</li>
-<li>#加上一个<strong>空格</strong>，然后才是标题内容</li>
-</ul>
-<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
-<li>斜体<ul>
-<li>用一对 * 或 _ 括住的字体表示斜体 <em>斜体</em></li>
-<li>ctrl + I</li>
-</ul>
-</li>
-<li>粗体<ul>
-<li>用一对 ***或___括住的字体表示粗体</li>
-<li>ctrl + B</li>
-</ul>
-</li>
-</ul>
-<h4 id="各种线"><a href="#各种线" class="headerlink" title="各种线"></a>各种线</h4><ul>
-<li><p>分割线</p>
+    <h1 id="模型（初步感性认识）"><a href="#模型（初步感性认识）" class="headerlink" title="模型（初步感性认识）"></a>模型（初步感性认识）</h1><h2 id="工厂模型"><a href="#工厂模型" class="headerlink" title="工厂模型"></a>工厂模型</h2><div class="story post-story"><p><strong>设想有一个老板</strong></p>
 <ul>
-<li><p>连续的三个* 或+ 或-：</p>
+<li><p>他想要赚钱致富，于是想到办工厂（<strong>进程</strong>）</p>
 </li>
-<li><p>+++</p>
+<li><p>为了生产产品，他花钱办了许多个工厂同时生产（<strong>多进程</strong>），由于每个工厂办在不同的地方，所以工厂之间没有联系（<strong>进程之间无法相互通信</strong>）</p>
 </li>
-</ul>
+<li><p>在每个工厂里，有许多不同的流水线，每个流水线有一名或多个工人（<strong>线程</strong>），一个工厂里可以自由交流（<strong>线程之间可以相互通信</strong>）</p>
 </li>
-<li><p>删除线</p>
-<ul>
-<li>用一对~~括住的文本</li>
-<li><del>删除线</del></li>
-</ul>
+<li><p>为了提高效率，一条流水线，老板要招收多个工人一起工作（<strong>多线程</strong>）。</p>
 </li>
-<li><p>下划线</p>
-<ul>
-<li>ctrl + U</li>
-</ul>
+<li><p>然而，为了进一步提高效率，老板想出了一个办法，让一名工人在等待其他工人时去干其他的活（<strong>协程</strong>）。</p>
+<p>  +++</p>
 </li>
 </ul>
-<h4 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h4><ul>
-<li><p>无序序列 </p>
-<ul>
-<li>ctrl + shift + 】</li>
-<li>用+或*或- 加上一个<strong>空格</strong>来表示</li>
+<h1 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h1></div><h2 id="多任务实现原理"><a href="#多任务实现原理" class="headerlink" title="多任务实现原理"></a>多任务实现原理</h2><div class="story post-story"><ul>
+<li>操作系统可以同时运⾏多个任务。打个 ⽐⽅，你⼀边在⽤浏览器上⽹，⼀边在听MP3，⼀边在⽤Word赶作业，这就是多任务，⾄少同时有3个任务正在运⾏。</li>
+<li>现在的电脑一般是双核四线程、四核八线程，是采用超线程技术将一个物理处理核心模拟成两个逻辑处理核心，对应两个内核线程，所以在操作系统中看到的CPU数量是实际物理CPU数量的两倍，如你的电脑是双核四线程，打开“任务管理器\性能”可以看到4个CPU的监视器，四核八线程可以看到8个CPU的监视器。</li>
+<li>假设每一个cpu有四个核心，每一个核心执行一个任务，也就实现了多任务。</li>
 </ul>
-</li>
-<li><p>有序序列 </p>
-<ul>
-<li>ctrl + shift +【</li>
-<li>用<strong>数字</strong>加上一个<strong>空格</strong>来表示</li>
+</div><h2 id="多任务实现方式"><a href="#多任务实现方式" class="headerlink" title="多任务实现方式"></a>多任务实现方式</h2><div class="story post-story"><h3 id="单核实现"><a href="#单核实现" class="headerlink" title="单核实现"></a>单核实现</h3><p>​    操作系统让每一个任务交替轮流执行，由于cpu的执行速度很快，看起来就像每个任务同时执行。</p>
+<p>+++</p>
+<h3 id="多核实现"><a href="#多核实现" class="headerlink" title="多核实现"></a>多核实现</h3><p>​    操作系统，让每一个任务轮流交给每个核心执行，如果任务的数量小于或等于核心的数量，就实现了真正的<strong>并行</strong>，任务大于核心的数量，便与单核实现类似。</p>
+<p><img src="img/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDU2ODYzMw==,size_16,color_FFFFFF,t_70.png" class="lazyload" data-srcset="img/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDU2ODYzMw==,size_16,color_FFFFFF,t_70.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h1 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h1></div><h2 id="进程的认识"><a href="#进程的认识" class="headerlink" title="进程的认识"></a>进程的认识</h2><div class="story post-story"><ul>
+<li>进程(<code>process</code>)是系统进行资源调度的最小单位</li>
+<li>进程是系统进行资源分配和调度的一个独立单元</li>
 </ul>
-<ol>
-<li>第一个</li>
-<li>第二个</li>
-</ol>
-</li>
-<li><p>列表的嵌套</p>
-<ol>
-<li>第一项</li>
-<li>第二项<ul>
-<li>第一项<ol>
-<li>第一项</li>
-<li></li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>缩进的距离 tab 或者 ctrl + 【</p>
-</li>
-</ul>
-<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><ul>
-<li><p>使用 &gt;加上空格，用于引用他人文章的内容</p>
-</li>
-<li><p>快捷键 ctrl + shift +q</p>
-</li>
-<li><p>退出 delete 或 enter</p>
-<blockquote>
-<p>引用的内容</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>引用的嵌套</p>
-</li>
-<li><blockquote>
-<p>一级</p>
-<blockquote>
-<p>二级</p>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><ul>
-<li><p>ctrl + shfit + k</p>
-</li>
-<li><p>如果是一行代码，可以使用段内代码块来表示，用一对 **`**（数字1旁边的符号）括住代码。</p>
-</li>
-<li><p>退出代码块：ctrl + enter</p>
-</li>
-<li><pre><code class="python">  print(&quot;hello,world&quot;)
-</code></pre>
-</li>
-</ul>
-<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><ul>
-<li>ctrl + K</li>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/">这是菜鸟链接</a></li>
-</ul>
-<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><ul>
-<li>ctrl + shift + I </li>
-<li>![本地图片](../../../../图片/Camera Roll/wallhaven-pkgkkp.png)</li>
-</ul>
-<ul>
-<li>可以直接复制粘贴图片 ，但需要在偏好设置中设置一下图片的保存地址</li>
-<li><img src="https://img-blog.csdnimg.cn/20191108173139695.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20191108173139695.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></li>
-</ul>
-<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><ul>
-<li><p>ctrl + T</p>
-</li>
-<li><p>对齐方式</p>
-<ul>
-<li><table>
-<thead>
-<tr>
-<th align="right">这是左对齐</th>
-<th align="right">这是右对齐</th>
-<th align="center">中间对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="right">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="right">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-</ul>
+</div><h2 id="多进程的实现方式"><a href="#多进程的实现方式" class="headerlink" title="多进程的实现方式"></a>多进程的实现方式</h2><div class="story post-story"><ol>
+<li><p>一般方法</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Pool</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">n</span>):</span></span><br><span class="line">    s = time.time()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;开始执行函数&#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;函数执行完成了&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    proc_list = []</span><br><span class="line">    <span class="comment"># 对于使用多个进程时，是并发的，但实际上是分配给了一个cpu，所以会有最后一个被启动的子进程，</span></span><br><span class="line">    <span class="comment"># 主进程只会等待最后一个被启动的子进程完成后结束，而不管其他的子进程是否结束</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>, <span class="number">9</span>):</span><br><span class="line">        process = Process(target=func, args=(<span class="number">0</span>,))</span><br><span class="line">        proc_list.append(process)</span><br><span class="line">        process.start()</span><br><span class="line">    <span class="comment"># 使主进程等待最后一个子进程结束</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> proc_list:</span><br><span class="line">        i.join()</span><br><span class="line">        <span class="comment"># 设置等待的时长</span></span><br><span class="line">        <span class="comment"># i.join(timeout=3)</span></span><br></pre></td></tr></table></figure></li>
+<li><p>队列（理解为单人卫生间）</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 管道是基于socket搭建的</span></span><br><span class="line"><span class="comment"># 队列是基于管道和锁搭建的，也就实现了进程之间的相互通信</span></span><br><span class="line"><span class="comment"># 就是把每一个进程放到默认加入锁，放入管道中，挨个执行，同时保证数据安全</span></span><br><span class="line"><span class="comment"># 队列遵循先进先出的原则</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Queue</span><br><span class="line"><span class="keyword">import</span> json, time</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;ticket.txt&quot;</span>,<span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(<span class="string">&#x27;&#123;&quot;ticket&quot;: 1&#125;&#x27;</span>,f)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 查找票数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span>(<span class="params">name</span>):</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;ticket.txt&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        dic = json.load(f)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name&#125;</span>查询到了<span class="subst">&#123;dic[<span class="string">&#x27;ticket&#x27;</span>]&#125;</span>张票&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 买票</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">name</span>):</span></span><br><span class="line">    dic = json.load(<span class="built_in">open</span>(<span class="string">&quot;ticket.txt&quot;</span>))</span><br><span class="line">    time.sleep(<span class="number">1</span>)  <span class="comment"># 由于操作过快，会导致所有的客户无法查找到票</span></span><br><span class="line">    <span class="keyword">if</span> dic[<span class="string">&quot;ticket&quot;</span>] &gt;= <span class="number">1</span>:</span><br><span class="line">        dic[<span class="string">&quot;ticket&quot;</span>] -= <span class="number">1</span></span><br><span class="line">        json.dump(dic, <span class="built_in">open</span>(<span class="string">&quot;ticket.txt&quot;</span>, <span class="string">&quot;w&quot;</span>))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name&#125;</span>买到了一张票&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没票了&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">name, queue</span>):</span> </span><br><span class="line">    search(name)</span><br><span class="line">    queue.put(get(name)) <span class="comment"># 把进程对象放入队列中</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q = Queue() <span class="comment"># </span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        p = Process(target=run, args=(<span class="string">f&quot;person<span class="subst">&#123;i&#125;</span>&quot;</span>, q))</span><br><span class="line">        p.start()</span><br><span class="line">        q.get() <span class="comment"># 把进程对象从队列中拿出</span></span><br></pre></td></tr></table></figure>
 
+</li>
+<li><p>信号量（理解为公共厕所）和锁</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Lock, Semaphore</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span>(<span class="params">name</span>):</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;ticket.txt&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        dic = json.load(f)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name&#125;</span>查询到了<span class="subst">&#123;dic[<span class="string">&#x27;ticket&#x27;</span>]&#125;</span>张票&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">name</span>):</span></span><br><span class="line">    dic = json.load(<span class="built_in">open</span>(<span class="string">&quot;ticket.txt&quot;</span>))</span><br><span class="line">    time.sleep(<span class="number">1</span>)  <span class="comment"># 由于操作过快，会导致所有的客户无法查找到票</span></span><br><span class="line">    <span class="keyword">if</span> dic[<span class="string">&quot;ticket&quot;</span>] &gt;= <span class="number">1</span>:</span><br><span class="line">        dic[<span class="string">&quot;ticket&quot;</span>] -= <span class="number">1</span></span><br><span class="line">        json.dump(dic, <span class="built_in">open</span>(<span class="string">&quot;ticket.txt&quot;</span>, <span class="string">&quot;w&quot;</span>))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name&#125;</span>买到了一张票&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没票了&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span>(<span class="params">name, semepore</span>):</span>  <span class="comment"># lock=None,</span></span><br><span class="line"></span><br><span class="line">    search(name)</span><br><span class="line">    lock.acquire() <span class="comment"># 拿到锁</span></span><br><span class="line">    get(name)</span><br><span class="line">    lock.release() <span class="comment"># 释放锁</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span>(<span class="params">name, semepore</span>):</span>  <span class="comment"># lock=None,</span></span><br><span class="line"></span><br><span class="line">    search(name)</span><br><span class="line">    semepore.acquire() <span class="comment"># 拿到锁</span></span><br><span class="line">    get(name)</span><br><span class="line">    semepore.release() <span class="comment"># 释放锁</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    tasks = []</span><br><span class="line">    <span class="comment"># 进程之间不共享数据，但共享同一个文件夹，</span></span><br><span class="line">    <span class="comment"># 导致一张票，被所有人买到</span></span><br><span class="line">    <span class="comment"># for i in range(10):</span></span><br><span class="line">    <span class="comment">#     ta = Process(target=task, args=(f&quot;person&#123;i&#125;&quot;,))</span></span><br><span class="line">    <span class="comment">#     ta.start()</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># lock类，加锁处理，并发变为串行</span></span><br><span class="line">    <span class="comment"># 使所有进程能同时访问同一个文件，但只有一个能对文件进行操作</span></span><br><span class="line">    lock = Lock()</span><br><span class="line">    <span class="comment"># for i in range(10):</span></span><br><span class="line">    <span class="comment">#     ta = Process(target=task, args=(f&quot;person&#123;i&#125;&quot;,))</span></span><br><span class="line">    <span class="comment">#     ta.start()</span></span><br><span class="line">    <span class="comment">#     tasks.append(ta)</span></span><br><span class="line">    <span class="comment"># for i in tasks:</span></span><br><span class="line">    <span class="comment">#     i.join()</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Semaphore类，计数器加锁，信号量</span></span><br><span class="line">    <span class="comment"># 使多个人能够拿到锁，同时进行操作</span></span><br><span class="line">    se = Semaphore(<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        ta = Process(target=task, args=(<span class="string">f&quot;person<span class="subst">&#123;i&#125;</span>&quot;</span>, se))</span><br><span class="line">        ta.start()</span><br></pre></td></tr></table></figure></li>
+<li><p>定义自己的进程类</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建自己的进程类</span></span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">My_Process</span>(<span class="params">Process</span>):</span> <span class="comment"># </span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value</span>):</span></span><br><span class="line">        self.value = value</span><br><span class="line">        <span class="comment"># 调用Process的初始化方法</span></span><br><span class="line">        <span class="built_in">super</span>(My_Process, self).__init__()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">my_method</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;start....&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">my_method2</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;end....&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.my_method()</span><br><span class="line">        self.my_method2()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    process = My_Process(<span class="string">&quot;None&quot;</span>, )</span><br><span class="line">    process.start()</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1></div><h2 id="线程的认识"><a href="#线程的认识" class="headerlink" title="线程的认识"></a>线程的认识</h2><div class="story post-story"><ul>
+<li>线程是程序运行的最小执行单位</li>
+<li>线程<code>thread</code>是操作系统进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位</li>
+</ul>
+</div><h2 id="多线程的实现方式"><a href="#多线程的实现方式" class="headerlink" title="多线程的实现方式"></a>多线程的实现方式</h2><div class="story post-story"><ol>
+<li><p>与多进程的一般实现方法一致</p>
+</li>
+<li><p>定义自己的线程类</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义自己的线程类</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">my_thread</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value</span>):</span></span><br><span class="line">        self.value = value</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        hello(self.value)</span><br><span class="line"></span><br><span class="line"><span class="comment"># if __name__ == &quot;__main__&quot;:</span></span><br><span class="line"><span class="comment">#     th = my_thread(&#x27;hello,world&#x27;)</span></span><br><span class="line"><span class="comment">#     th.start()</span></span><br></pre></td></tr></table></figure></li>
+<li><p>定时器</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Timer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 停顿自定义的时间后，才会执行</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_str</span>(<span class="params"><span class="built_in">str</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;hello,<span class="subst">&#123;<span class="built_in">str</span>&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    t = Timer(<span class="number">3</span>, print_str, args=(<span class="string">f&quot;person<span class="subst">&#123;i&#125;</span>&quot;</span>,))</span><br><span class="line">    t.start()</span><br><span class="line">    t_list.append(t)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;主进程结束&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> t_list:</span><br><span class="line">    t.join(timeout=<span class="number">3</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="多进程和多线程的对比"><a href="#多进程和多线程的对比" class="headerlink" title="多进程和多线程的对比"></a>多进程和多线程的对比</h1><ul>
+<li>对于IO密集型一般用多线程，对于计算密集型，一般用多进程。</li>
+<li>多进程下的资源是无法共享的，也就是读取的资源可能不同步，但是共享全局变量；而多线程一般是在同一个进程中，所以其中的资源是共享的。</li>
+<li>多线程的一个进程中的主线程会等待其下所有的子进程结束后结束，而多进程的主进程在不添加阻塞（join）的情况下，不会等待子进程结束。</li>
+</ul>
+<h1 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h1></div><h2 id="协程的认识"><a href="#协程的认识" class="headerlink" title="协程的认识"></a>协程的认识</h2><div class="story post-story"><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>​    由程序员自己写程序来管理的轻量级线程叫做用户空间线程，也叫纤程线程的切换由操作系统负责调度，协程由用户自己进行调度，因此减少了上下文切换，提高了效率。</p>
+<h3 id="特点（优势）"><a href="#特点（优势）" class="headerlink" title="特点（优势）"></a>特点（优势）</h3><ul>
+<li>可以把它看作一个函数，由程序员自己决定切换任务的执行。</li>
+<li>由于不需要切换线程，也就减小了开销，更能合理的利用cpu的资源</li>
+<li>只在一个线程里，不存在写变量冲突，也就不用加锁，执行效率比多线程高很多。</li>
+</ul>
+</div><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><div class="story post-story"><ol>
+<li><p>yield 实现</p>
+<p> 用生成器实现，通过send方法，设置提交表达式为None，自己设置下一个提交的值，从而实现用户自己的调度。</p>
+</li>
+<li><p>gevent模块</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> gevent</span><br><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> monkey</span><br><span class="line"><span class="comment"># 打补丁，修改python自带的标准库为非阻塞，将耗时的代码修改为内置的代码</span></span><br><span class="line">monkey.patch_all()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task1</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;task1start&quot;</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;task1end&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task2</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;task2start&quot;</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;task2end&quot;</span>)</span><br><span class="line"></span><br><span class="line">s = time.time()</span><br><span class="line">g1 = gevent.spawn(task1)</span><br><span class="line">g2 = gevent.spawn(task2)</span><br><span class="line">g1.join()</span><br><span class="line">g2.join()</span><br><span class="line">e = time.time()</span><br><span class="line"><span class="built_in">print</span>(e-s)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44568633/article/details/104154459?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-1.queryctrv4&spm=1001.2101.3001.4242.2&utm_relevant_index=4">(12条消息) python高级编程 —- 多任务编程_多进程编程 &amp; 多线程编程 &amp; 协程_biggirler的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.360doc.com/content/20/0417/14/32196507_906628857.shtml">一文读懂什么是进程、线程、协程（建议收藏） (360doc.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43868754/article/details/105188918?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-1-105188918.pc_agg_new_rank&utm_term=%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E5%8D%8F%E7%A8%8B%E9%80%9A%E4%BF%97%E7%90%86%E8%A7%A3&spm=1000.2123.3001.4430">(12条消息) 【Python】Python多任务第1篇：多进程、多线程与协程通俗易懂的理解方式_岚清子的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43868754/article/details/105342461">(12条消息) 【Python】Python多任务第2篇：多线程、多进程与协程的代码实现范例_岚清子的博客-CSDN博客</a></p>
+</blockquote>
 
+</div>
   </div>
   
   
@@ -2639,7 +2561,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/>https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/</a></p>
+                <p>本文永久链接是：<a href=https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/>https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/</a></p>
               
             
           </blockquote>
@@ -2656,10 +2578,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-16T17:11:24+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-03-17T19:10:45+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年1月16日</p>
+    <p>更新于：2022年3月17日</p>
   </a>
 </div>
 
@@ -2668,8 +2590,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>软件</p></a></div>
-  <span hidden itemprop="keywords">软件</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>python</p></a></div>
+  <span hidden itemprop="keywords">python</span>
 
 
         
@@ -2682,7 +2604,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/&title=typora的使用 - pursur_world&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/&title=进程，线程，协程的学习 - pursur_world&summary="
           
           >
           
@@ -2694,7 +2616,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/&title=typora的使用 - pursur_world&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/&title=进程，线程，协程的学习 - pursur_world&summary="
           
           >
           
@@ -2706,7 +2628,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/&title=typora的使用 - pursur_world&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/&title=进程，线程，协程的学习 - pursur_world&summary="
           
           >
           
@@ -2739,27 +2661,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/01/13/%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>一切皆对象</p>
-          <p class='content'>一. 一切皆对象python中，一切皆对象什么是对象？
-
-可以被赋值给一个对象
-可以被添加到一个列表或其他序列中，作为一个元素
-可以被用作参数传递，或返回值返回
-
-+++
-对象的类型
-
-pyth...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/01/08/hexo-github%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/'>
-          <p class='title'>hexo+github的博客搭建<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>hexo+github的博客搭建说起博客的搭建过程，作为一个小白，真是受尽了九九八十一难，但功夫不负有心人
-+++
-搭建过程参考的网站
-【2021最新版】保姆级Hexo+github搭建个人博客...</p>
+        <a class='next' href='/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/'>
+          <p class='title'>python在import时的问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>同目录下导入模块会报错  在一个学习案例中，运行Process_run.py报如下的错误
+
+12ModuleNotFoundError: No module named &#x27;s_hand...</p>
         </a>
       
     </div>
@@ -2775,7 +2682,7 @@ pyth...</p>
   
   <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论</p>
     
@@ -2808,7 +2715,7 @@ pyth...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-text">标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E7%BA%BF"><span class="toc-text">各种线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%8F%E5%88%97"><span class="toc-text">序列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-text">引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-text">图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-text">表格</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%9E%8B"><span class="toc-text">工厂模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-text">多任务实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">多任务实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%A0%B8%E5%AE%9E%E7%8E%B0"><span class="toc-text">单核实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A0%B8%E5%AE%9E%E7%8E%B0"><span class="toc-text">多核实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%AE%A4%E8%AF%86"><span class="toc-text">进程的认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">多进程的实现方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E8%AE%A4%E8%AF%86"><span class="toc-text">线程的认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">多线程的实现方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E7%A8%8B%E7%9A%84%E8%AE%A4%E8%AF%86"><span class="toc-text">协程的认识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9%EF%BC%88%E4%BC%98%E5%8A%BF%EF%BC%89"><span class="toc-text">特点（优势）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">实现方式</span></a></li></ol>
     </div>
   </section>
 
@@ -2860,7 +2767,7 @@ pyth...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="typora的使用";
+  pdata.postTitle="进程，线程，协程的学习";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2990,8 +2897,8 @@ pyth...</p>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1647515590536')
-      volantis.js('/js/thirdparty/message.js?time=1647515590536', () => {
+      volantis.css('/css/message.css?time=1647515590479')
+      volantis.js('/js/thirdparty/message.js?time=1647515590479', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3036,8 +2943,8 @@ pyth...</p>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1647515590536')
-      volantis.js('/js/thirdparty/message.js?time=1647515590536', () => {
+      volantis.css('/css/message.css?time=1647515590479')
+      volantis.js('/js/thirdparty/message.js?time=1647515590479', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3096,8 +3003,8 @@ pyth...</p>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1647515590536')
-      volantis.js('/js/thirdparty/message.js?time=1647515590536', () => {
+      volantis.css('/css/message.css?time=1647515590479')
+      volantis.js('/js/thirdparty/message.js?time=1647515590479', () => {
         hideMessage(done);
       });
     } else {
@@ -3362,7 +3269,7 @@ pyth...</p>
     
     
     
-    volantis.js('/js/plugins/rightMenu.js?time=1647515590536')
+    volantis.js('/js/plugins/rightMenu.js?time=1647515590479')
   </script>
 
 
@@ -3376,19 +3283,19 @@ pyth...</p>
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1647515590536")
+        volantis.js("/js/plugins/sites.js?time=1647515590479")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1647515590536")
+        volantis.js("/js/plugins/friends.js?time=1647515590479")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1647515590536")
+        volantis.js("/js/plugins/contributors.js?time=1647515590479")
       }
     
   };
@@ -3460,7 +3367,7 @@ pyth...</p>
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1647515590538')
+    await volantis.js('/js/plugins/aplayer.js?time=1647515590484')
     volantis.APlayerController.music = true;
   
   })();
@@ -3600,7 +3507,7 @@ pyth...</p>
 
 
 
-<script src="/js/app.js?time=1647515590536.js"></script>
+<script src="/js/app.js?time=1647515590479.js"></script>
 
 
 <!-- optional -->
@@ -3613,7 +3520,7 @@ pyth...</p>
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1647515590536");
+    return volantis.js("/js/search/hexo.js?time=1647515590479");
   }
 
   function loadSearchService() {
@@ -3678,7 +3585,7 @@ pyth...</p>
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3721,7 +3628,7 @@ pyth...</p>
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1647515590536').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1647515590479').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3955,7 +3862,7 @@ pyth...</p>
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/教程/","name":"教程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/01/09/typora的使用/","name":"typora的使用"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"typora的使用","description":"","datePublished":"2022-01-09T08:30:33.000Z","dateModified":"2022-01-16T09:11:24.644Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/01/09/typora%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"articleSection":"教程","keywords":"软件","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/学习记录/","name":"学习记录"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/03/05/进程，线程，协程的学习/","name":"进程，线程，协程的学习"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"进程，线程，协程的学习","description":"","datePublished":"2022-03-05T11:58:36.000Z","dateModified":"2022-03-17T11:10:45.509Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/","wordCount":0,"articleSection":"学习记录","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

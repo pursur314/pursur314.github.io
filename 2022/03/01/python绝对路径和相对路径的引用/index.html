@@ -20,23 +20,23 @@
   <meta content="pursur_world" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1646316494762" as="style">
+  <link rel="preload" href="/css/style.css?time=1647515590488" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>python在import时的问题 - pursur_world</title>
   <meta name="keywords" content="python,null">
-  <meta name="description" content="同目录下导入模块会报错  在一个学习案例中，同一个目录下无法导入模块，报如下的错误 1ModuleNotFoundError: No module named &amp;#x27;s_handler&amp;#x27;  这是因为PyCharm不会将当前文件目录自动加入source_path。 将该目录设置为Source root   (11条消息) PyCharm同目录下导入模块会报错的问题_一颗小甜心的博客-">
+  <meta name="description" content="同目录下导入模块会报错  在一个学习案例中，运行Process_run.py报如下的错误  12ModuleNotFoundError: No module named &amp;#x27;s_handler&amp;#x27;    同一个目录下无法导入模块，  这是因为PyCharm不会将当前文件目录自动加入source_path，source_path为执行文件所在的目录，自然找不到在core目录下的s_h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python在import时的问题">
 <meta property="og:url" content="https://pursur314.github.io/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/index.html">
 <meta property="og:site_name" content="pursur_world">
-<meta property="og:description" content="同目录下导入模块会报错  在一个学习案例中，同一个目录下无法导入模块，报如下的错误 1ModuleNotFoundError: No module named &amp;#x27;s_handler&amp;#x27;  这是因为PyCharm不会将当前文件目录自动加入source_path。 将该目录设置为Source root   (11条消息) PyCharm同目录下导入模块会报错的问题_一颗小甜心的博客-">
+<meta property="og:description" content="同目录下导入模块会报错  在一个学习案例中，运行Process_run.py报如下的错误  12ModuleNotFoundError: No module named &amp;#x27;s_handler&amp;#x27;    同一个目录下无法导入模块，  这是因为PyCharm不会将当前文件目录自动加入source_path，source_path为执行文件所在的目录，自然找不到在core目录下的s_h">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-03-01T00:03:01.000Z">
-<meta property="article:modified_time" content="2022-03-03T14:07:44.694Z">
+<meta property="article:modified_time" content="2022-03-04T12:45:25.920Z">
 <meta property="article:author" content="Cain_pursuer">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -1628,8 +1628,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1646316494762" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1646316494762"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1647515590488" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1647515590488"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2467,18 +2467,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="同目录下导入模块会报错"><a href="#同目录下导入模块会报错" class="headerlink" title="同目录下导入模块会报错"></a><strong>同目录下导入模块会报错</strong></h1><p>  在一个学习案例中，同一个目录下无法导入模块，报如下的错误</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named <span class="string">&#x27;s_handler&#x27;</span></span><br></pre></td></tr></table></figure>
+    <h1 id="同目录下导入模块会报错"><a href="#同目录下导入模块会报错" class="headerlink" title="同目录下导入模块会报错"></a><strong>同目录下导入模块会报错</strong></h1><p>  在一个学习案例中，运行<code>Process_run.py</code>报如下的错误</p>
+<p><img src="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/image-20220304101021318.png" class="lazyload" data-srcset="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/image-20220304101021318.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220304101021318"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named <span class="string">&#x27;s_handler&#x27;</span></span><br><span class="line">    同一个目录下无法导入模块，</span><br></pre></td></tr></table></figure>
 
-<p>这是因为PyCharm不会将当前文件目录自动加入source_path。</p>
-<p>将该目录设置为Source root</p>
+<p>这是因为PyCharm不会将当前文件目录自动加入source_path，source_path为执行文件所在的目录，自然找不到在<code>core</code>目录下的<code>s_handle</code>模块。</p>
+<p>解决方式：</p>
+<ol>
+<li>将该目录设置为Source root</li>
+</ol>
 <p><img src="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/20190414123556491.png" class="lazyload" data-srcset="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/20190414123556491.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<ol start="2">
+<li><p>在<code>s_handle</code>模块中加入如下代码</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">&quot;s_handle模块所在目录的绝对路径&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39362996/article/details/89295030?ops_request_misc=%7B%22request_id%22:%22164631112016780271590741%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=164631112016780271590741&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~baidu_landing_v2~default-1-89295030.nonecase&utm_term=PyCharm%E5%90%8C%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E4%BC%9A%E6%8A%A5%E9%94%99&spm=1018.2226.3001.4450">(11条消息) PyCharm同目录下导入模块会报错的问题_一颗小甜心的博客-CSDN博客</a></p>
 </blockquote>
 <p>+++</p>
-<h1 id="python包相对导入时出现的错误"><a href="#python包相对导入时出现的错误" class="headerlink" title="python包相对导入时出现的错误"></a>python包相对导入时出现的错误</h1><p>在<code>from . import XXX </code>或<code>from .。 import XXX </code>时报错</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ValueError: attempted relative <span class="keyword">import</span> beyond top-level package</span><br><span class="line">SystemError: Parent module <span class="string">&#x27;&#x27;</span> <span class="keyword">not</span> loaded, cannot perform relative <span class="keyword">import</span></span><br></pre></td></tr></table></figure>
+<h1 id="python包相对导入时出现的错误"><a href="#python包相对导入时出现的错误" class="headerlink" title="python包相对导入时出现的错误"></a>python包相对导入时出现的错误</h1><p>在<code>from . import XXX </code>或<code>from .。 import XXX </code>时，即想要调用父目录下的模块报错<img src="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/image-20220304103044612.png" class="lazyload" data-srcset="img/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/image-20220304103044612.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220304103044612"></p>
+<p>在<code>process</code>中调用<code>setting</code>模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ValueError: attempted relative <span class="keyword">import</span> beyond top-level package</span><br><span class="line">SystemError: Parent module <span class="string">&#x27;&#x27;</span> <span class="keyword">not</span> loaded, cannot perform relative <span class="keyword">import</span></span><br><span class="line">ImportError: attempted relative <span class="keyword">import</span> <span class="keyword">with</span> no known parent package</span><br></pre></td></tr></table></figure>
 
 
 
@@ -2490,12 +2501,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>注意：<strong>在”from YY import XX”这样的代码中，无论是XX还是YY，只要被python解释器视作package，就会首先调用该package的__init__.py文件。如果都是package，则调用顺序是YY，XX。</strong></p>
 <p>解决办法：</p>
 <ol>
-<li>将相对路径变为绝对路径</li>
-<li>把执行文件放在调用的包目录外，顶层脚本的名称为<code>__main__</code>,该目录即使有<code>__init__.py</code>文件，也不会被视作一个包，由于没有<code>..</code>自然无法使用，自然无法使用<code>from .. import </code>。</li>
+<li><p>将相对路径变为绝对路径</p>
+</li>
+<li><p>把执行文件放在调用的包目录外，顶层脚本的名称为<code>__main__</code>,该目录即使有<code>__init__.py</code>文件，也不会被视作一个包，由于没有<code>..</code>（名称中不包含文件路径）自然无法使用，自然无法使用<code>from .. import </code>。</p>
+</li>
+<li><p>导入模块最万无一失的方法</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">os.chdir(os.path.dirname(__file__))</span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html">Python包的相对导入时出现错误的解决方法 - 青山牧云人 - 博客园 (cnblogs.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/suiyueruge1314/article/details/102683546">(10条消息) python包导入细节（attempted relative import beyond top-level package的原因解读）_岁月如歌-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.luzy.top/posts/3276205951/">python模块相对路径引用错误处理 - 江风引雨の小po站 (luzy.top)</a></p>
 </blockquote>
 <p>+++</p>
 <h1 id="相对引用和绝对引用的优缺点分析"><a href="#相对引用和绝对引用的优缺点分析" class="headerlink" title="相对引用和绝对引用的优缺点分析"></a>相对引用和绝对引用的优缺点分析</h1><h3 id="绝对引用"><a href="#绝对引用" class="headerlink" title="绝对引用"></a>绝对引用</h3><p>优点是清晰且直接，可以很容易就确定引用文件位置；且即使当前文件的位置发生变化，导入语句仍然有效。<br>缺点是当引用路径较为复杂时，导入语句很长，如：</p>
@@ -2541,10 +2557,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-03-03T22:07:44+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-03-04T20:45:25+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年3月3日</p>
+    <p>更新于：2022年3月4日</p>
   </a>
 </div>
 
@@ -2623,6 +2639,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>进程，线程，协程的学习</p>
+          <p class='content'>模型（初步感性认识）工厂模型设想有一个老板
+
+他想要赚钱致富，于是想到办工厂（进程）
+
+为了生产产品，他花钱办了许多个工厂同时生产（多进程），由于每个工厂办在不同的地方，所以工厂之间没有联系（进...</p>
+        </a>
       
       
         <a class='next' href='/2022/01/20/pickle%E5%92%8Cjson%E6%A8%A1%E5%9D%97/'>
@@ -2859,8 +2884,8 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1646316494761')
-      volantis.js('/js/thirdparty/message.js?time=1646316494762', () => {
+      volantis.css('/css/message.css?time=1647515590488')
+      volantis.js('/js/thirdparty/message.js?time=1647515590488', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2905,8 +2930,8 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1646316494761')
-      volantis.js('/js/thirdparty/message.js?time=1646316494762', () => {
+      volantis.css('/css/message.css?time=1647515590488')
+      volantis.js('/js/thirdparty/message.js?time=1647515590488', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2965,8 +2990,8 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1646316494761')
-      volantis.js('/js/thirdparty/message.js?time=1646316494762', () => {
+      volantis.css('/css/message.css?time=1647515590488')
+      volantis.js('/js/thirdparty/message.js?time=1647515590488', () => {
         hideMessage(done);
       });
     } else {
@@ -3231,7 +3256,7 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
     
     
     
-    volantis.js('/js/plugins/rightMenu.js?time=1646316494762')
+    volantis.js('/js/plugins/rightMenu.js?time=1647515590488')
   </script>
 
 
@@ -3245,19 +3270,19 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1646316494762")
+        volantis.js("/js/plugins/sites.js?time=1647515590488")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1646316494762")
+        volantis.js("/js/plugins/friends.js?time=1647515590488")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1646316494762")
+        volantis.js("/js/plugins/contributors.js?time=1647515590488")
       }
     
   };
@@ -3329,7 +3354,7 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1646316494765')
+    await volantis.js('/js/plugins/aplayer.js?time=1647515590490')
     volantis.APlayerController.music = true;
   
   })();
@@ -3469,7 +3494,7 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
 
 
 
-<script src="/js/app.js?time=1646316494762.js"></script>
+<script src="/js/app.js?time=1647515590488.js"></script>
 
 
 <!-- optional -->
@@ -3482,7 +3507,7 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1646316494762");
+    return volantis.js("/js/search/hexo.js?time=1647515590488");
   }
 
   function loadSearchService() {
@@ -3547,7 +3572,7 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3590,7 +3615,7 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1646316494762').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1647515590488').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3824,7 +3849,7 @@ pickle 模块​         把对象序列化为python可识别的对象，且不�
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/学习记录/","name":"学习记录"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/03/01/python绝对路径和相对路径的引用/","name":"python在import时的问题"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"python在import时的问题","description":"","datePublished":"2022-03-01T00:03:01.000Z","dateModified":"2022-03-03T14:07:44.694Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/","wordCount":0,"articleSection":"学习记录","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"pursur_world","url":"https://pursur314.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/","sameAs":["https://github.com/volantis-x"],"description":"我面朝着大海，春暖花开"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://pursur314.github.io/","name":"pursur_world"}},{"@type":"ListItem","position":2,"item":{"@id":"https://pursur314.github.io/categories/学习记录/","name":"学习记录"}},{"@type":"ListItem","position":3,"item":{"@id":"https://pursur314.github.io/2022/03/01/python绝对路径和相对路径的引用/","name":"python在import时的问题"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"python在import时的问题","description":"","datePublished":"2022-03-01T00:03:01.000Z","dateModified":"2022-03-04T12:45:25.920Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://pursur314.github.io/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/"},"author":{"@type":"Person","name":"Cain_pursuer","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://pursur314.github.io/"},"publisher":{"@type":"Organization","name":"pursur_world","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://pursur314.github.io/2022/03/01/python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E5%BC%95%E7%94%A8/","wordCount":0,"articleSection":"学习记录","keywords":"python","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
