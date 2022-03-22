@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>一些标签的区分</title>
+      <link href="/2022/03/21/%E4%B8%80%E4%BA%9B%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8C%BA%E5%88%86/"/>
+      <url>/2022/03/21/%E4%B8%80%E4%BA%9B%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8C%BA%E5%88%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一些常用标签和属性的区分"><a href="#一些常用标签和属性的区分" class="headerlink" title="一些常用标签和属性的区分"></a>一些常用标签和属性的区分</h1><h2 id="id，class，name的区分"><a href="#id，class，name的区分" class="headerlink" title="id，class，name的区分"></a>id，class，name的区分</h2><div class="story post-story"><ul><li><p>id ：一个html中只能有一个id ，不能重复</p></li><li><p>class ：一个html文档中可以有多个，且一个元素可以有多个class属性</p></li><li><p>name：在html文档中用于提交form表单域的信息，定义了name的表单元素，服务器才可以接受到数据。</p></li></ul></div><h2 id="src-，href，url的区分"><a href="#src-，href，url的区分" class="headerlink" title="src ，href，url的区分"></a>src ，href，url的区分</h2><div class="story post-story"><ul><li>src ：Source，一般用于外部资源的引入，在引入的过程中，会暂停其他文件的下载和解析，一般多用于script，img，iframe等标签中</li><li>href：hype text reference，外部资源的引用，一般用于建立元素和文档的链接，一般用于a，link标签中</li><li>url：Uniform Resource Locator，统一资源定位符，网页的网址</li></ul></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>进程，线程，协程的学习</title>
       <link href="/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
       <url>/2022/03/05/%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
